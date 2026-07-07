@@ -1,0 +1,180 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Minimal animated embers">
+  <defs>
+    <linearGradient id="fadeMask" x1="0" y1="300" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="white"/>
+      <stop offset="48%" stop-color="white"/>
+      <stop offset="68%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="82%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+
+    <mask id="topFade">
+      <rect width="1200" height="300" fill="url(#fadeMask)"/>
+    </mask>
+
+    <radialGradient id="spark" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffdf6"/>
+      <stop offset="30%" stop-color="#ffe5b0"/>
+      <stop offset="64%" stop-color="#ff9c42"/>
+      <stop offset="100%" stop-color="rgba(255,156,66,0)"/>
+    </radialGradient>
+
+    <radialGradient id="underGlow" cx="50%" cy="100%" r="52%">
+      <stop offset="0%" stop-color="rgba(255,146,58,0.18)"/>
+      <stop offset="40%" stop-color="rgba(255,99,32,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,99,32,0)"/>
+    </radialGradient>
+
+    <filter id="soft" x="-200%" y="-200%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+
+    <filter id="softBig" x="-200%" y="-200%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="5.5"/>
+    </filter>
+
+    <symbol id="dotA" overflow="visible">
+      <circle r="3.8" fill="url(#spark)" filter="url(#soft)"/>
+      <circle r="1.05" fill="#fffef9"/>
+    </symbol>
+
+    <symbol id="dotB" overflow="visible">
+      <ellipse rx="5.4" ry="4.2" fill="url(#spark)" filter="url(#softBig)"/>
+      <ellipse rx="1.45" ry="1.15" fill="#fff8e7"/>
+    </symbol>
+
+    <style>
+      .bg { fill: #050505; }
+      .glow1 {
+        animation: pulse1 4s ease-in-out infinite;
+        transform-origin: 50% 100%;
+      }
+      .glow2 {
+        animation: pulse2 5.4s ease-in-out infinite;
+        transform-origin: 50% 100%;
+      }
+      @keyframes pulse1 {
+        0%, 100% { opacity: 0.8; transform: scale(1,1); }
+        50% { opacity: 1; transform: scale(1.03,1.08); }
+      }
+      @keyframes pulse2 {
+        0%, 100% { opacity: 0.24; transform: scale(1,1); }
+        50% { opacity: 0.42; transform: scale(1.06,1.1); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .glow1, .glow2 { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="300" rx="22"/>
+  <ellipse class="glow2" cx="600" cy="330" rx="380" ry="120" fill="url(#underGlow)"/>
+  <ellipse class="glow1" cx="600" cy="324" rx="250" ry="88" fill="url(#underGlow)"/>
+
+  <g mask="url(#topFade)">
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="170 315;176 285;184 252;194 222;205 194;214 172;222 154"
+        dur="6.6s" begin="0s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale"
+          values="0.34;0.94;1;0.7;0.16"
+          dur="6.6s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity"
+          values="0;0.82;0.96;0.42;0"
+          dur="6.6s" begin="0s" repeatCount="indefinite"/>
+        <use href="#dotB"/>
+      </g>
+    </g>
+
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="320 315;326 289;336 260;348 232;360 208;372 188;384 168"
+        dur="5.8s" begin="1.3s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale"
+          values="0.22;0.74;0.82;0.52;0.1"
+          dur="5.8s" begin="1.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity"
+          values="0;0.68;0.82;0.28;0"
+          dur="5.8s" begin="1.3s" repeatCount="indefinite"/>
+        <use href="#dotA"/>
+      </g>
+    </g>
+
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="455 315;464 287;476 254;491 224;508 198;520 178;532 160"
+        dur="7.2s" begin="0.7s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale"
+          values="0.36;0.98;1.04;0.76;0.18"
+          dur="7.2s" begin="0.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity"
+          values="0;0.86;0.98;0.44;0"
+          dur="7.2s" begin="0.7s" repeatCount="indefinite"/>
+        <use href="#dotB"/>
+      </g>
+    </g>
+
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="602 315;608 292;618 264;630 238;642 214;654 192;666 172"
+        dur="5.2s" begin="2.1s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale"
+          values="0.18;0.62;0.76;0.45;0.08"
+          dur="5.2s" begin="2.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity"
+          values="0;0.56;0.74;0.22;0"
+          dur="5.2s" begin="2.1s" repeatCount="indefinite"/>
+        <use href="#dotA"/>
+      </g>
+    </g>
+
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="745 315;752 287;764 254;780 224;796 198;810 178;824 160"
+        dur="6.9s" begin="0.4s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale"
+          values="0.34;0.94;0.98;0.72;0.16"
+          dur="6.9s" begin="0.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity"
+          values="0;0.82;0.94;0.38;0"
+          dur="6.9s" begin="0.4s" repeatCount="indefinite"/>
+        <use href="#dotB"/>
+      </g>
+    </g>
+
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="900 315;906 290;914 262;924 236;936 212;948 190;960 170"
+        dur="5.6s" begin="1.8s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale"
+          values="0.2;0.68;0.8;0.5;0.08"
+          dur="5.6s" begin="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity"
+          values="0;0.62;0.8;0.24;0"
+          dur="5.6s" begin="1.8s" repeatCount="indefinite"/>
+        <use href="#dotA"/>
+      </g>
+    </g>
+
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="1030 315;1040 286;1055 252;1072 224;1088 200;1102 180;1118 160"
+        dur="7.5s" begin="1s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale"
+          values="0.38;1;1.04;0.78;0.18"
+          dur="7.5s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity"
+          values="0;0.88;1;0.44;0"
+          dur="7.5s" begin="1s" repeatCount="indefinite"/>
+        <use href="#dotB"/>
+      </g>
+    </g>
+  </g>
+</svg>
